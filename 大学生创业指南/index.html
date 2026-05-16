@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大学生创业指南</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="回到首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>大学生创业指南</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#roadmap">创业路线</a>
+        <a href="#validator">想法验证</a>
+        <a href="#toolkit">工具箱</a>
+        <a href="#resources">资源库</a>
+      </nav>
+      <a class="nav-action" href="#checklist">今日清单</a>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">从校园想法到真实用户</p>
+          <h1>大学生创业指南</h1>
+          <p class="hero-lede">
+            把模糊灵感拆成可执行步骤：验证问题、找到用户、做出 MVP、跑通校园试点，再决定是否投入更多时间和钱。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#roadmap">
+              <span class="button-icon" aria-hidden="true">→</span>
+              开始路线图
+            </a>
+            <a class="button secondary" href="#validator">
+              <span class="button-icon" aria-hidden="true">✓</span>
+              评估想法
+            </a>
+          </div>
+          <div class="metric-row" aria-label="指南重点指标">
+            <div>
+              <strong>6</strong>
+              <span>创业阶段</span>
+            </div>
+            <div>
+              <strong>18</strong>
+              <span>关键任务</span>
+            </div>
+            <div>
+              <strong>4</strong>
+              <span>实用工具</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="创业路径可视化">
+          <canvas id="orbitCanvas" width="680" height="520"></canvas>
+          <div class="stage-panel">
+            <p>当前建议</p>
+            <strong>先验证问题，再做产品</strong>
+            <span>用 10 次用户访谈替代 1 次盲目开发。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-band" aria-label="创业前判断">
+        <div class="section-heading">
+          <p class="eyebrow">先判断，再投入</p>
+          <h2>这个页面适合三类人</h2>
+        </div>
+        <div class="fit-grid">
+          <article>
+            <span class="fit-index">01</span>
+            <h3>有想法但不确定方向</h3>
+            <p>你需要验证问题是否真实存在，而不是马上做 App、注册公司或参加比赛。</p>
+          </article>
+          <article>
+            <span class="fit-index">02</span>
+            <h3>正在组队做校园项目</h3>
+            <p>你需要把分工、股权、用户、预算和交付物说清楚，避免团队早期内耗。</p>
+          </article>
+          <article>
+            <span class="fit-index">03</span>
+            <h3>准备参加创业比赛</h3>
+            <p>你需要把 BP、路演故事和可验证数据连接起来，而不是只堆概念和趋势。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-heading">
+          <p class="eyebrow">创业路线</p>
+          <h2>从想法到第一次真实成交</h2>
+          <p>每个阶段都只保留最重要的目标、动作和交付物，方便你按周推进。</p>
+        </div>
+
+        <div class="roadmap">
+          <button class="stage-card active" type="button" data-stage="0">
+            <span>01</span>
+            <strong>问题发现</strong>
+            <small>找到具体痛点</small>
+          </button>
+          <button class="stage-card" type="button" data-stage="1">
+            <span>02</span>
+            <strong>用户验证</strong>
+            <small>访谈和观察</small>
+          </button>
+          <button class="stage-card" type="button" data-stage="2">
+            <span>03</span>
+            <strong>MVP 原型</strong>
+            <small>做最小版本</small>
+          </button>
+          <button class="stage-card" type="button" data-stage="3">
+            <span>04</span>
+            <strong>校园试点</strong>
+            <small>跑通小闭环</small>
+          </button>
+          <button class="stage-card" type="button" data-stage="4">
+            <span>05</span>
+            <strong>商业化</strong>
+            <small>定价与复购</small>
+          </button>
+          <button class="stage-card" type="button" data-stage="5">
+            <span>06</span>
+            <strong>路演融资</strong>
+            <small>讲清增长逻辑</small>
+          </button>
+        </div>
+
+        <div class="stage-detail" aria-live="polite">
+          <div>
+            <p class="detail-label">阶段目标</p>
+            <h3 id="stageTitle">问题发现</h3>
+            <p id="stageGoal">把“我觉得有需求”改成“某类人正在被某个问题持续困扰”。</p>
+          </div>
+          <div class="detail-columns">
+            <div>
+              <h4>要做什么</h4>
+              <ul id="stageActions"></ul>
+            </div>
+            <div>
+              <h4>交付物</h4>
+              <ul id="stageOutputs"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section" id="validator">
+        <div class="section-heading">
+          <p class="eyebrow">想法验证</p>
+          <h2>快速判断一个创业点子值不值得继续</h2>
+          <p>给四个维度打分，先得到一个粗略判断。分数不是答案，但能逼你把关键假设说清楚。</p>
+        </div>
+
+        <div class="validator-layout">
+          <form class="score-panel" id="scoreForm">
+            <label>
+              <span>痛点强度</span>
+              <input type="range" min="1" max="10" value="6" name="pain" />
+              <output>6</output>
+            </label>
+            <label>
+              <span>目标用户清晰度</span>
+              <input type="range" min="1" max="10" value="5" name="user" />
+              <output>5</output>
+            </label>
+            <label>
+              <span>获取用户难度</span>
+              <input type="range" min="1" max="10" value="4" name="access" />
+              <output>4</output>
+            </label>
+            <label>
+              <span>付费可能性</span>
+              <input type="range" min="1" max="10" value="5" name="pay" />
+              <output>5</output>
+            </label>
+          </form>
+
+          <div class="result-panel">
+            <p>当前评分</p>
+            <strong id="scoreValue">50</strong>
+            <span id="scoreLabel">可以继续访谈，不急着开发</span>
+            <div class="score-bar" aria-hidden="true">
+              <span id="scoreFill"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="toolkit">
+        <div class="section-heading">
+          <p class="eyebrow">工具箱</p>
+          <h2>把创业动作拆成今天能做的小任务</h2>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card">
+            <div class="tool-head">
+              <span class="tool-icon" aria-hidden="true">?</span>
+              <h3>用户访谈问题库</h3>
+            </div>
+            <ol>
+              <li>你上一次遇到这个问题是什么时候？</li>
+              <li>你现在怎么解决？每次要花多少时间或钱？</li>
+              <li>如果有人帮你解决，你愿意付出什么？</li>
+            </ol>
+          </article>
+
+          <article class="tool-card budget-card">
+            <div class="tool-head">
+              <span class="tool-icon" aria-hidden="true">¥</span>
+              <h3>启动预算估算</h3>
+            </div>
+            <div class="budget-inputs">
+              <label>工具软件 <input type="number" min="0" value="300" id="costTools" /></label>
+              <label>物料样品 <input type="number" min="0" value="800" id="costSample" /></label>
+              <label>推广测试 <input type="number" min="0" value="500" id="costMarketing" /></label>
+            </div>
+            <p class="budget-total">预计启动预算：<strong id="budgetTotal">1600</strong> 元</p>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-head">
+              <span class="tool-icon" aria-hidden="true">B</span>
+              <h3>BP 一页纸结构</h3>
+            </div>
+            <ul>
+              <li>问题：谁在什么场景下痛苦？</li>
+              <li>方案：你如何更快、更便宜或更可靠？</li>
+              <li>证据：访谈、试点、成交或留存数据。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section checklist-section" id="checklist">
+        <div class="section-heading">
+          <p class="eyebrow">今日清单</p>
+          <h2>如果你今天只做 5 件事</h2>
+        </div>
+
+        <div class="checklist">
+          <label><input type="checkbox" /> 写下一个具体用户画像，而不是“大学生”。</label>
+          <label><input type="checkbox" /> 找 3 个人问最近一次真实经历。</label>
+          <label><input type="checkbox" /> 记录他们现在的替代方案和成本。</label>
+          <label><input type="checkbox" /> 画出最小可用版本，只保留核心动作。</label>
+          <label><input type="checkbox" /> 明确下一周要验证的一个假设。</label>
+        </div>
+      </section>
+
+      <section class="section warning-band">
+        <div class="section-heading">
+          <p class="eyebrow">少走弯路</p>
+          <h2>早期最容易踩的坑</h2>
+        </div>
+        <div class="warning-grid">
+          <article>
+            <h3>先做产品，再找用户</h3>
+            <p>这是最常见的浪费。先用访谈、表单、手工服务或样品证明需求。</p>
+          </article>
+          <article>
+            <h3>比赛获奖等于市场成立</h3>
+            <p>比赛认可的是表达和潜力，市场认可的是复购、推荐和真实付费。</p>
+          </article>
+          <article>
+            <h3>合伙关系靠感觉维持</h3>
+            <p>分工、投入、退出机制和股权归属越早说清楚，后面越能专注做事。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="resources">
+        <div class="section-heading">
+          <p class="eyebrow">资源库</p>
+          <h2>从校园里开始找第一批资源</h2>
+        </div>
+        <div class="resource-grid">
+          <article>
+            <span>校内</span>
+            <h3>创业学院与孵化器</h3>
+            <p>适合找导师、场地、政策讲座和校内项目展示机会。</p>
+          </article>
+          <article>
+            <span>用户</span>
+            <h3>社团、宿舍、课程群</h3>
+            <p>适合低成本寻找第一批访谈对象和试点用户。</p>
+          </article>
+          <article>
+            <span>资金</span>
+            <h3>创新创业训练计划</h3>
+            <p>适合获得早期经费、指导老师和项目背书。</p>
+          </article>
+          <article>
+            <span>传播</span>
+            <h3>校园媒体与公众号</h3>
+            <p>适合发布招募、试用和阶段性成果。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>把创业当作一场小规模实验：先证明问题，再扩大投入。</p>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
