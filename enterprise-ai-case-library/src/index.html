@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111b25" />
+  <meta name="description" content="罗辑AI·中国企业AI落地案例库。真实来源、行业筛选、FDE工作流拆解、技术组件与普通人可实践方案。" />
+  <title>企业 AI 实战案例库 · 罗辑 AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="shell" class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="identity">
+        <div class="brandmark"><span class="mark-square"></span><span class="mark-dot"></span></div>
+        <div><strong>罗辑 AI</strong><span>企业落地案例库</span></div>
+      </div>
+      <div class="side-label">案例导航</div>
+      <nav id="primary-nav" class="primary-nav" aria-label="案例导航">
+        <button class="nav-item is-active" data-mode="all"><span class="nav-icon">▦</span>国内企业案例 <span class="nav-count" id="case-number">0</span></button>
+        <button class="nav-item" data-mode="solo"><span class="nav-icon">◇</span>可单人借鉴 <span class="nav-count" id="solo-number">0</span></button>
+        <button class="nav-item" data-mode="blueprint"><span class="nav-icon">↗</span>普通人接单方案 <span class="nav-count" id="idea-number">0</span></button>
+        <button class="nav-item" data-mode="fde"><span class="nav-icon">◎</span>FDE 现场拆解 <span class="nav-count" id="fde-number">0</span></button>
+      </nav>
+      <div class="side-label industries-title">按行业探索</div>
+      <nav id="industry-nav" class="industry-nav" aria-label="行业分类"></nav>
+      <div class="side-bottom">
+        <div class="side-mini"><span class="mini-pulse"></span><span>研究版本 · 2026.11</span></div>
+        <p>案例、技术、流程与来源，一站式检索。</p>
+        <button id="about-nav" class="side-about">关于案例库 <span>↗</span></button>
+      </div>
+    </aside>
+    <div class="page">
+      <header class="topbar">
+        <div class="crumb"><button id="mobile-menu" class="mobile-menu" aria-label="打开菜单">☰</button><span>罗辑 AI</span><span class="slash">/</span><strong>企业 AI 案例库</strong></div>
+        <div class="top-actions"><span class="top-meta"><span class="green-dot"></span> 资料版本 · 2026.11</span><a class="top-link" href="https://github.com/new" target="_blank" rel="noopener noreferrer">部署到 GitHub ↗</a></div>
+      </header>
+      <main id="main">
+        <section class="hero" aria-label="案例库介绍">
+          <div class="hero-grid"></div><div class="hero-orb orb-1"></div><div class="hero-orb orb-2"></div>
+          <div class="hero-content">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> 国内项目 · 真实案例与实操方案</div>
+            <h1>企业 AI <em>落地案例库</em></h1>
+            <p>从大型企业到街边小店，找到真实业务问题、实施路径、技术组件和原始出处。</p>
+            <div class="hero-buttons"><button class="hero-main" id="explore-button">浏览企业案例 <span>↗</span></button><button class="hero-outline" id="starter-button">查看普通人接单方案 <span>→</span></button></div>
+            <div class="hero-note"><span class="hero-note-dash"></span> 面向企业老板、AI 开发者和想做交付的普通人</div>
+          </div>
+          <div class="hero-right" aria-hidden="true">
+            <div class="hero-visual-title">项目拆解路径</div>
+            <div class="hero-diagram">
+              <div class="flow-node node-1"><span>01</span><strong>业务痛点</strong><small>为什么要做</small></div>
+              <div class="flow-node node-2"><span>02</span><strong>实施工作流</strong><small>怎么把它做出来</small></div>
+              <div class="flow-node node-3"><span>03</span><strong>技术组件</strong><small>模型 / 数据 / 工具</small></div>
+              <div class="flow-node node-4"><span>04</span><strong>效果与出处</strong><small>如何验证</small></div>
+            </div>
+          </div>
+        </section>
+        <section class="stats" aria-label="数据库统计">
+          <div><span class="stat-name">公开项目条目</span><strong id="stat-cases">—</strong><small>包含 AI 应用及数字化配套项目</small></div>
+          <div><span class="stat-name">行业维度</span><strong id="stat-industries">—</strong><small>制造、金融、零售、政务等</small></div>
+          <div><span class="stat-name">FDE 现场拆解</span><strong id="stat-interviews">—</strong><small>有一线项目交付过程</small></div>
+          <div class="stat-special"><span class="stat-name">个人实践方案</span><strong id="stat-blueprints">—</strong><small>场景、交付物与工具组合</small></div>
+        </section>
+        <section class="quick-category" aria-label="热门行业">
+           <span>热门行业</span><button data-quick-industry="制造业">制造业</button><button data-quick-industry="零售电商">零售电商</button><button data-quick-industry="金融财务">金融财务</button><button data-quick-industry="餐饮本地生活">餐饮本地生活</button><button data-quick-industry="物流供应链">物流供应链</button><button data-quick-industry="建筑与工程">建筑工程</button>
+        </section>
+        <section class="section-heading" id="browse">
+          <div><div class="small-caps">按行业和场景检索</div><h2 id="library-heading">探索案例库</h2><p id="library-subheading">每条案例都可以查看业务场景、实施步骤、技术组件和原始资料。</p></div>
+          <div class="legend"><span><i class="legend-circle green"></i>访谈级拆解</span><span><i class="legend-circle amber"></i>摘要 / 名单</span><span><i class="legend-circle gray"></i>参考设计</span></div>
+        </section>
+        <section class="filters" aria-label="筛选案例">
+          <div class="searchbar"><span class="search-icon" aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索企业、行业、场景、技术，例如：RAG / OCR / 飞书" /><span class="shortcut">搜索</span></div>
+          <select id="depth-filter" aria-label="筛选项目规模"><option value="all">项目规模 · 全部</option><option value="轻量">轻量项目</option><option value="标准">标准项目</option><option value="深度">深度项目</option></select>
+          <select id="evidence-filter" aria-label="筛选公开证据"><option value="all">资料类型 · 全部</option><option value="一线">FDE 项目访谈</option><option value="政府">政府案例摘要</option><option value="行业协会">行业协会案例</option><option value="部委">工信部入选</option><option value="未交付">参考方案</option></select>
+          <button id="clear-filters" class="filter-reset" title="重置筛选">重置</button>
+        </section>
+        <div class="results-toolbar"><span id="result-count">加载中…</span><div class="result-actions"><button id="saved-only" class="text-button" aria-pressed="false">☆ 仅看收藏</button><button id="export-btn" class="text-button">↓ 导出筛选结果</button><select id="sort" aria-label="排序"><option value="recommended">优先看详细案例</option><option value="industry">按行业排序</option><option value="depth">按项目规模排序</option></select></div></div>
+        <section id="case-grid" class="case-grid" aria-live="polite"></section>
+        <div id="empty-state" class="empty-state" hidden><div class="empty-graphic">⌕</div><h3>没有找到匹配案例</h3><p>可以减少筛选条件，或者尝试更通用的技术关键词。</p><button id="empty-reset">查看全部案例</button></div>
+        <div id="pagination" class="pagination"></div>
+        <section class="field-guide" id="field-guide"><div class="guide-top"><div><div class="small-caps">从需求到交付</div><h2>一条项目从了解需求，<br>到真正交付，需要做什么？</h2></div><p>从企业每天的真实操作里识别瓶颈。以下七步是编辑提炼的通用操作框架，不声称每个案例都遵循同一流程。</p></div>
+          <div class="guide-steps"><div><b>01</b><strong>跟岗观察</strong><p>找到反复出现的人工卡点，而不是推销工具。</p></div><div><b>02</b><strong>确认 ROI 与权限</strong><p>谁买单、谁使用、数据能否获取，先说清。</p></div><div><b>03</b><strong>建立基线</strong><p>记录改造前耗时、错误率、人工工作量。</p></div><div><b>04</b><strong>最小验证</strong><p>只跑一条真实业务链，验证是否真省事。</p></div><div><b>05</b><strong>系统集成</strong><p>嵌入企业原有ERP、表格、微信或飞书。</p></div><div><b>06</b><strong>人工兜底</strong><p>风险高的动作经授权和审批，保留回退路径。</p></div><div><b>07</b><strong>验收与维护</strong><p>实测业务效果，交接规则和运行维护职责。</p></div></div>
+        </section>
+        <section class="source-note" id="method">
+          <div><span class="note-mark">资料说明</span><strong>真实案例与参考方案分别标注</strong><p>一线 FDE 访谈、官方/协会入选名单、普通人可做的实操方案，信息详略不同。每条案例可查看对应原始来源与复现建议。</p></div>
+          <a href="https://www.miit.gov.cn/jgsj/kjs/wjfb/art/2026/art_735cc3b48391470ea3baec587e526d5f.html" target="_blank" rel="noopener noreferrer">查看官方案例来源 ↗</a>
+        </section>
+        <footer class="footer"><div class="footer-title"><span class="footer-logo">罗</span> 罗辑 AI · 企业 AI 案例库</div><p>资料来源于原作者、协会和政府公示；学习拆解不等同于企业真实交付方案。</p><div>2026 年 11 月更新 <span>·</span> 开放阅读</div></footer>
+      </main>
+    </div>
+  </div>
+  <div id="overlay" class="overlay" hidden><button id="overlay-bg" class="overlay-bg" aria-label="关闭详情"></button><div class="detail-panel" id="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title" tabindex="-1"><div id="detail-body"></div></div></div>
+  <div id="mobile-backdrop" class="mobile-backdrop" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>
